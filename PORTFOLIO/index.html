@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Electronics Student | ANDC College</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="neon-circle"></div>
+            <div class="loading-text">INITIALIZING...</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="neon-text">PORTFOLIO</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-name">
+                    <span class="neon-text">Vishesh Pal</span>
+                </h1>
+                <p class="hero-tagline">Electronics Engineering Student & Future Tech Innovator</p>
+                <p class="hero-description">
+                    Welcome to my portfolio! I'm an Electronics Engineering student at ANDC College,Delhi University.
+                    Exploring my journey through electronics, AI, and robotics.</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn-neon">Explore My Journey</a>
+                    <a href="#contact" class="btn-neon">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <img src="mypic.png" alt="Profile Picture" class="profile-pic">
+                    <div class="neon-border"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg-elements">
+            <div class="floating-cube cube-1"></div>
+            <div class="floating-cube cube-2"></div>
+            <div class="floating-cube cube-3"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="neon-text">ABOUT ME</span>
+            </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="info-card">
+                        <h3>Who Am I?</h3>
+                        <!-- your personal information below -->
+                        <p>I'm <strong>Vishesh Pal</strong>, A passionate Electronics Engineering student at ANDC College, Delhi University. With a strong foundation from CBSE 12th grade, I'm diving deep into the world of technology and innovation.</p>
+                        <p>My interests include AI, robotics, and exploring the latest advancements in electronics. I believe in the power of technology to transform lives and am excited to contribute to this field.</p>
+                        <p>Feel free to connect with me on social media or through the contact form below
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <h4>Education</h4>
+                                    <p>B.Sc. (Hons.) Electronics<br>ANDC College, Delhi University</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-school"></i>
+                                <div>
+                                    <h4>Background</h4>
+                                    <p>12th Grade - CBSE Board<br>Strong Academic Foundation</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-rocket"></i>
+                                <div>
+                                    <h4>Passion</h4>
+                                    <p>Technology Enthusiast<br>AI & Robotics Explorer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="neon-text">SKILLS & EXPERTISE</span>
+            </h2>
+            <div class="skills-grid">
+                <!-- Add/remove skills as needed -->
+                <div class="skill-card" data-skill="html">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML5</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar" data-level="85"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-skill="css">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS3</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar" data-level="80"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-skill="js">
+                    <div class="skill-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar" data-level="75"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-skill="python">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar" data-level="70"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-skill="mysql">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>MySQL</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar" data-level="65"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-skill="linux">
+                    <div class="skill-icon">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <h3>Linux</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar" data-level="60"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="neon-text">PROJECTS</span>
+            </h2>
+            <div class="projects-grid">
+                <!-- Coming Soon Cards -->
+                <div class="project-card coming-soon">
+                    <div class="project-content">
+                        <div class="coming-soon-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Coming Soon</h3>
+                        <p>Exciting projects are in development. Stay tuned for amazing tech innovations!</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card coming-soon">
+                    <div class="project-content">
+                        <div class="coming-soon-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI Project</h3>
+                        <p>Machine learning project focusing on predictive analytics and data visualization.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card coming-soon">
+                    <div class="project-content">
+                        <div class="coming-soon-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3>IoT Solution</h3>
+                        <p>Internet of Things project combining hardware and software for smart automation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">Raspberry Pi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Instructions for adding projects -->
+            <div class="add-project-info">
+                <p class="info-text">
+                    <i class="fas fa-info-circle"></i>
+                    Exciting projects are under development and will be showcased here shortly
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="neon-text">GET IN TOUCH</span>
+            </h2>
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <button type="submit" class="btn-neon">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="social-links">
+                    <h3>Connect With Me</h3>
+                    <div class="social-icons">
+                        <!--social media links -->
+                        <a href="https://www.linkedin.com/in/vishesh-pal-93a03a350/" class="social-link linkedin" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/thevishesh21" class="social-link github" target="_blank">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.instagram.com/the_vishesh_21/" class="social-link instagram" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://x.com/Vishesh_Pal_21" class="social-link twitter" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Vishesh Pal. Crafted with passion and neon dreams.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
