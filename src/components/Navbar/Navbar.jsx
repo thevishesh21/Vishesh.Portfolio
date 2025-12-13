@@ -46,7 +46,7 @@ const Navbar = () => {
           animate={{ opacity: 1 }}
           className="nav-logo"
         >
-          PORTFOLIO
+          VISHESH PAL
         </motion.div>
 
         {/* Desktop Menu */}
