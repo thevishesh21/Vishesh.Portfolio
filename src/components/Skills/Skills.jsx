@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+// नए आइकन्स (FaAws, FaReact, FaChartBar) इंपोर्ट किए गए
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaPython, FaLinux, FaDatabase, FaAws, FaReact, FaChartBar } from 'react-icons/fa'; 
 import './Skills.css';
 
 const Skills = () => {
@@ -7,12 +9,16 @@ const Skills = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const skills = [
-    { name: "HTML5", level: 85, icon: "fab fa-html5", color: "html-color" },
-    { name: "CSS3", level: 80, icon: "fab fa-css3-alt", color: "css-color" },
-    { name: "JavaScript", level: 75, icon: "fab fa-js-square", color: "js-color" },
-    { name: "Python", level: 70, icon: "fab fa-python", color: "python-color" },
-    { name: "MySQL", level: 65, icon: "fas fa-database", color: "mysql-color" },
-    { name: "Linux", level: 60, icon: "fab fa-linux", color: "linux-color" }
+    { name: "HTML5", level: 85, Icon: FaHtml5, color: "html-color" },
+    { name: "CSS3", level: 80, Icon: FaCss3Alt, color: "css-color" },
+    { name: "JavaScript", level: 75, Icon: FaJsSquare, color: "js-color" },
+    { name: "Python", level: 70, Icon: FaPython, color: "python-color" },
+    { name: "MySQL", level: 65, Icon: FaDatabase, color: "mysql-color" },
+    { name: "Linux", level: 60, Icon: FaLinux, color: "linux-color" },
+    // 👈 नई स्किल्स जोड़ी गईं
+    { name: "AWS", level: 55, Icon: FaAws, color: "aws-color" },
+    { name: "React", level: 70, Icon: FaReact, color: "react-color" },
+    { name: "Data Analysis", level: 65, Icon: FaChartBar, color: "analysis-color" } 
   ];
 
   const scaleIn = {
@@ -36,7 +42,8 @@ const Skills = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="section-header"
         >
-          <h2 className="section-title">SKILLS & EXPERTISE</h2>
+          {/* हेडिंग साइज़ छोटा करने के लिए h2 को h3 में बदला गया */}
+          <h3 className="section-title">SKILLS & EXPERTISE</h3> 
           <div className="section-underline"></div>
         </motion.div>
 
@@ -46,28 +53,32 @@ const Skills = () => {
           animate={isInView ? "visible" : "hidden"}
           className="skills-grid"
         >
-          {skills.map((skill, index) => (
-            <motion.div
-              key={index}
-              variants={scaleIn}
-              whileHover={{ y: -5, scale: 1.02 }}
-              className="skill-card"
-            >
-              <div className="skill-icon-wrapper">
-                <i className={`${skill.icon} skill-icon`}></i>
-              </div>
-              <h3 className="skill-name">{skill.name}</h3>
-              <div className="skill-bar-container">
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={isInView ? { width: `${skill.level}%` } : {}}
-                  transition={{ delay: index * 0.1, duration: 1 }}
-                  className={`skill-bar ${skill.color}`}
-                />
-              </div>
-              <p className="skill-percentage">{skill.level}%</p>
-            </motion.div>
-          ))}
+          {skills.map((skill, index) => {
+            const IconComponent = skill.Icon;
+
+            return (
+              <motion.div
+                key={index}
+                variants={scaleIn}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="skill-card"
+              >
+                <div className="skill-icon-wrapper">
+                  <IconComponent className="skill-icon" />
+                </div>
+                <h3 className="skill-name">{skill.name}</h3>
+                <div className="skill-bar-container">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={isInView ? { width: `${skill.level}%` } : {}}
+                    transition={{ delay: index * 0.1, duration: 1 }}
+                    className={`skill-bar ${skill.color}`}
+                  />
+                </div>
+                <p className="skill-percentage">{skill.level}%</p>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

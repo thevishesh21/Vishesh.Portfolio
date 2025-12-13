@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+// Font Awesome Icons को react-icons/fa से इंपोर्ट किया गया
+import { FaLinkedinIn, FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
@@ -26,25 +28,26 @@ const Contact = () => {
   const socialLinks = [
     { 
       name: 'LinkedIn', 
-      icon: 'fab fa-linkedin-in', 
+      // अब icon क्लास की जगह Icon कंपोनेंट का रेफरेंस
+      Icon: FaLinkedinIn, 
       url: 'https://www.linkedin.com/in/vishesh-pal-93a03a350/',
       color: 'linkedin'
     },
     { 
       name: 'GitHub', 
-      icon: 'fab fa-github', 
+      Icon: FaGithub, 
       url: 'https://github.com/thevishesh21',
       color: 'github'
     },
     { 
       name: 'Instagram', 
-      icon: 'fab fa-instagram', 
+      Icon: FaInstagram, 
       url: 'https://www.instagram.com/the_vishesh_21/',
       color: 'instagram'
     },
     { 
       name: 'Twitter', 
-      icon: 'fab fa-twitter', 
+      Icon: FaTwitter, 
       url: 'https://x.com/Vishesh_Pal_21',
       color: 'twitter'
     }
@@ -143,19 +146,26 @@ const Contact = () => {
           >
             <h3 className="social-title">Connect With Me</h3>
             <div className="social-links">
-              {socialLinks.map((link, index) => (
-                <motion.a
-                  key={index}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05, x: 10 }}
-                  className={`social-link ${link.color}`}
-                >
-                  <i className={`${link.icon} social-icon`}></i>
-                  <span className="social-name">{link.name}</span>
-                </motion.a>
-              ))}
+              {socialLinks.map((link, index) => {
+                // Icon कंपोनेंट को लिंक ऑब्जेक्ट से बाहर निकालें
+                const IconComponent = link.Icon; 
+
+                return (
+                  <motion.a
+                    key={index}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05, x: 10 }}
+                    className={`social-link ${link.color}`}
+                  >
+                    {/* Icon कंपोनेंट को सीधे रेंडर करें और CSS क्लास दें */}
+                    <IconComponent className="social-icon" />
+                    
+                    <span className="social-name">{link.name}</span>
+                  </motion.a>
+                );
+              })}
             </div>
           </motion.div>
         </div>

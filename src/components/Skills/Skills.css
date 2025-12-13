@@ -11,14 +11,16 @@
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* ग्रिड को वही रखा है ताकि 9 कार्ड्स अच्छे से फिट हो जाएं */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
   gap: 2rem;
 }
 
 .skill-card {
   background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
   border-radius: 1.5rem;
-  padding: 2.5rem;
+  /* 👈 साइज़ छोटा करने के लिए padding घटाया गया */
+  padding: 2rem; 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: all 0.3s ease;
@@ -85,6 +87,19 @@
 
 .linux-color {
   background: linear-gradient(to right, #374151, #111827);
+}
+
+/* 👈 नई स्किल्स के लिए कलर */
+.aws-color {
+  background: linear-gradient(to right, #ff9900, #ffc460); 
+}
+
+.react-color {
+  background: linear-gradient(to right, #61dafb, #00d8ff);
+}
+
+.analysis-color {
+  background: linear-gradient(to right, #10b981, #059669);
 }
 
 .skill-percentage {
