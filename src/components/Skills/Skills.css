@@ -1,0 +1,100 @@
+.skills {
+  padding: 5rem 0;
+  background: white;
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.skill-card {
+  background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.skill-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.skill-icon {
+  font-size: 4rem;
+  color: #3b82f6;
+}
+
+.skill-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.skill-bar-container {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 1rem;
+  height: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.skill-bar {
+  height: 100%;
+  border-radius: 1rem;
+  transition: width 1s ease;
+}
+
+/* Skill-specific colors */
+.html-color {
+  background: linear-gradient(to right, #f97316, #dc2626);
+}
+
+.css-color {
+  background: linear-gradient(to right, #3b82f6, #06b6d4);
+}
+
+.js-color {
+  background: linear-gradient(to right, #fbbf24, #f59e0b);
+}
+
+.python-color {
+  background: linear-gradient(to right, #3b82f6, #fbbf24);
+}
+
+.mysql-color {
+  background: linear-gradient(to right, #2563eb, #1e40af);
+}
+
+.linux-color {
+  background: linear-gradient(to right, #374151, #111827);
+}
+
+.skill-percentage {
+  color: #3b82f6;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
