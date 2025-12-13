@@ -81,7 +81,7 @@ const Hero = () => {
               <div className="hero-image-border">
                 <div className="hero-image-inner">
                   <img
-                    src="/mypic.png"
+                    src="/Vishesh.Portfolio/mypic.png"
                     alt="Vishesh Pal"
                     className="hero-image"
                   />
