@@ -6,8 +6,10 @@ import About from './components/About/About';
 import Services from './components/Services/Services';
 import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
+import Certifications from './components/Certification/Certification';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
 function App() {
@@ -44,6 +46,7 @@ function App() {
       <Services />
       <Skills />
       <Projects />
+      <Certifications />
       <Contact />
       <Footer />
     </div>
