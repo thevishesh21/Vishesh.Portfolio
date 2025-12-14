@@ -29,6 +29,13 @@ function App() {
     setTimeout(() => setLoading(false), 1500);
   }, []);
 
+  // Ensure hash routing always starts at home when opening the deployed link directly
+  useEffect(() => {
+    if (!window.location.hash || window.location.hash === '#') {
+      window.location.hash = '#/';
+    }
+  }, []);
+
   if (loading) {
     return (
       <div className="loading-screen">
