@@ -1,11 +1,13 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Navbar.css';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,7 +20,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
+    { name: 'Services', href: '/services', isRoute: true },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Certifications', href: '#certifications' },
@@ -36,6 +38,24 @@ const Navbar = () => {
     }
   };
 
+  const handleNavClick = (e, link) => {
+    if (link.isRoute) {
+      e.preventDefault();
+      navigate(link.href);
+      setMobileMenuOpen(false);
+    } else {
+      if (location.pathname !== '/') {
+        e.preventDefault();
+        navigate('/');
+        setTimeout(() => {
+          scrollToSection(e, link.href);
+        }, 100);
+      } else {
+        scrollToSection(e, link.href);
+      }
+    }
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -47,17 +67,18 @@ const Navbar = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="nav-logo"
+          onClick={() => navigate('/')}
+          style={{ cursor: 'pointer' }}
         >
           VISHESH PAL
         </motion.div>
 
-        {/* Desktop Menu */}
         <div className="nav-menu">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              onClick={(e) => scrollToSection(e, link.href)}
+              onClick={(e) => handleNavClick(e, link)}
               className="nav-link"
             >
               {link.name}
@@ -65,7 +86,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="hamburger"
@@ -74,7 +94,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -85,7 +104,7 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              onClick={(e) => scrollToSection(e, link.href)}
+              onClick={(e) => handleNavClick(e, link)}
               className="mobile-link"
             >
               {link.name}

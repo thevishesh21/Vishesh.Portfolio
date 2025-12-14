@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
@@ -9,7 +10,6 @@ import Projects from './components/Projects/Projects';
 import Certifications from './components/Certification/Certification';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
 function App() {
@@ -39,17 +39,31 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-      <About />
-      <Services />
-      <Skills />
-      <Projects />
-      <Certifications />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Hero />
+              <About />
+              <Skills />
+              <Projects />
+              <Certifications />
+              <Contact />
+              <Footer />
+            </>
+          } />
+          <Route path="/services" element={
+            <>
+              <Services />
+              <Contact />
+              <Footer />
+            </>
+          } />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
