@@ -18,7 +18,7 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
+    { name: 'Home', href: '/', isRoute: true },
     { name: 'About', href: '#about' },
     { name: 'Services', href: '/services', isRoute: true },
     { name: 'Skills', href: '#skills' },
@@ -43,6 +43,7 @@ const Navbar = () => {
       e.preventDefault();
       navigate(link.href);
       setMobileMenuOpen(false);
+      window.scrollTo(0, 0);
     } else {
       if (location.pathname !== '/') {
         e.preventDefault();
@@ -67,7 +68,10 @@ const Navbar = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="nav-logo"
-          onClick={() => navigate('/')}
+          onClick={() => {
+            navigate('/');
+            window.scrollTo(0, 0);
+          }}
           style={{ cursor: 'pointer' }}
         >
           VISHESH PAL
