@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-// Font Awesome Icons को react-icons/fa से इंपोर्ट किया गया
 import { FaLinkedinIn, FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
 import './Contact.css';
 
@@ -28,7 +27,6 @@ const Contact = () => {
   const socialLinks = [
     { 
       name: 'LinkedIn', 
-      // अब icon क्लास की जगह Icon कंपोनेंट का रेफरेंस
       Icon: FaLinkedinIn, 
       url: 'https://www.linkedin.com/in/vishesh-pal-93a03a350/',
       color: 'linkedin'
@@ -147,7 +145,6 @@ const Contact = () => {
             <h3 className="social-title">Connect With Me</h3>
             <div className="social-links">
               {socialLinks.map((link, index) => {
-                // Icon कंपोनेंट को लिंक ऑब्जेक्ट से बाहर निकालें
                 const IconComponent = link.Icon; 
 
                 return (
@@ -159,7 +156,7 @@ const Contact = () => {
                     whileHover={{ scale: 1.05, x: 10 }}
                     className={`social-link ${link.color}`}
                   >
-                    {/* Icon कंपोनेंट को सीधे रेंडर करें और CSS क्लास दें */}
+                    {}
                     <IconComponent className="social-icon" />
                     
                     <span className="social-name">{link.name}</span>

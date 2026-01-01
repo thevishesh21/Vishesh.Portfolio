@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-// 👈 Font Awesome आइकन्स इंपोर्ट किए गए
 import { FaGraduationCap, FaSchool, FaRocket } from 'react-icons/fa'; 
 import './About.css';
 
@@ -10,7 +9,6 @@ const About = () => {
 
   const infoCards = [
     {
-      // इमोजी की जगह Icon कंपोनेंट का रेफरेंस
       Icon: FaGraduationCap, 
       title: "Education",
       subtitle: "B.Sc. (Hons.) Electronics",
@@ -82,7 +80,7 @@ const About = () => {
               className="info-grid"
             >
               {infoCards.map((card, index) => {
-                const IconComponent = card.Icon; // Icon कंपोनेंट को डीस्ट्रक्चर करें
+                const IconComponent = card.Icon;
                 
                 return (
                   <motion.div
@@ -91,7 +89,7 @@ const About = () => {
                     whileHover={{ y: -5 }}
                     className="info-card"
                   >
-                    {/* इमोजी की जगह IconComponent को रेंडर करें */}
+                    {}
                     <div className="info-icon">
                       <IconComponent />
                     </div>
