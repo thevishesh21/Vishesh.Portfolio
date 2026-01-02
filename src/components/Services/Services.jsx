@@ -90,7 +90,7 @@ const ServicesPage = () => {
   const whyChoose = [
     {
       Icon: FaCheckCircle,
-      title: "Expert Team",
+      title: "Have Expert Team",
       description: "Experienced professionals with deep technical knowledge"
     },
     {
@@ -186,7 +186,7 @@ const ServicesPage = () => {
             transition={{ duration: 0.6 }}
             className="section-header"
           >
-            <h2 className="section-title-blue">Why Choose Us?</h2>
+            <h2 className="section-title-blue">Why Choose Me ?</h2>
           </motion.div>
 
           <motion.div
