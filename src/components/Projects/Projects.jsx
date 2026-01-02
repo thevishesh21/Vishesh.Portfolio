@@ -3,6 +3,11 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import './Projects.css';
 
+// Import icon images - adjust path based on your folder structure
+import blogIcon from "../../assets/icons/Blog-Icon.png";
+import portfolioIcon from "../../assets/icons/portfolio-icon.webp";
+import iotIcon from "../../assets/icons/iot-icon.jpg";
+import scoreIcon from "../../assets/icons/sport-icon.webp";
 const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -10,6 +15,7 @@ const Projects = () => {
   const projects = [
     {
       icon: "fas fa-newspaper",
+      iconImage: blogIcon,
       title: "SPIE Blog Page",
       subtitle: "SPIE Student Chapter",
       description: "Responsive blog page for SPIE Student Chapter showcasing technical articles and events with improved accessibility and user interaction.",
@@ -18,6 +24,7 @@ const Projects = () => {
     },
     {
       icon: "fas fa-user-circle",
+      iconImage: portfolioIcon,
       title: "Personal Portfolio Website",
       description: "Fully responsive portfolio website with mobile-first design, showcasing projects, skills, and achievements with smooth animations.",
       tags: ["React.js", "CSS3", "JavaScript"],
@@ -25,6 +32,7 @@ const Projects = () => {
     },
     {
       icon: "fas fa-bolt",
+      iconImage: iotIcon,
       title: "IoT Home Automation System",
       description: "IoT-based home automation prototype using Raspberry Pi with sensors and actuators for real-time monitoring and automated control.",
       tags: ["Raspberry Pi", "Python", "Electronics"],
@@ -32,6 +40,7 @@ const Projects = () => {
     },
     {
       icon: "fas fa-table-tennis",
+      iconImage: scoreIcon,
       title: "Sports Score Analyzer",
       description: "Sports analysis system for match data and performance trends with data processing, visualization, and statistical insights.",
       tags: ["Python", "Pandas", "Matplotlib"],
@@ -39,6 +48,7 @@ const Projects = () => {
     },
     {
       icon: "fas fa-rocket",
+      iconImage: null,
       title: "Coming Soon",
       description: "New innovative projects in development focused on advanced web development, cloud services, and data-driven solutions.",
       tags: ["TBD"],
@@ -86,7 +96,15 @@ const Projects = () => {
             >
               <div className="project-icon-container">
                 <div className="project-icon-wrapper">
-                  <i className={`${project.icon} project-icon`}></i>
+                  {project.iconImage ? (
+                    <img 
+                      src={project.iconImage} 
+                      alt={`${project.title} icon`} 
+                      className="project-icon-image" 
+                    />
+                  ) : (
+                    <i className={`${project.icon} project-icon`}></i>
+                  )}
                 </div>
               </div>
               

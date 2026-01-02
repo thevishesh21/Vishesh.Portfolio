@@ -21,3 +21,24 @@
     font-size: 0.875rem;
   }
 }
+.footer-subtext {
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.back-to-top {
+  margin-top: 1rem;
+  background: transparent;
+  border: none;
+  color: #38bdf8;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.back-to-top:hover {
+  text-decoration: underline;
+}

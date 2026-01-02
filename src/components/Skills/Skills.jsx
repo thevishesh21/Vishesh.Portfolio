@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-// नए आइकन्स (FaAws, FaReact, FaChartBar) इंपोर्ट किए गए
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaPython, FaLinux, FaDatabase, FaAws, FaReact, FaChartBar } from 'react-icons/fa'; 
 import './Skills.css';
 
@@ -42,7 +41,7 @@ const Skills = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="section-header"
         >
-          {/* हेडिंग साइज़ छोटा करने के लिए h2 को h3 में बदला गया */}
+          {}
           <h3 className="section-title">SKILLS & EXPERTISE</h3> 
           <div className="section-underline"></div>
         </motion.div>
