@@ -8,13 +8,42 @@ const Contact = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
-    setTimeout(() => setSubmitted(false), 5000);
+    setIsLoading(true);
+    
+    try {
+      const response = await fetch('http://127.0.0.1:8000/api/contact/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        })
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        console.log('Success:', data.message);
+        setSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        console.error('Error:', data.message);
+        alert('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+      alert('Network error. Please check if backend is running on http://127.0.0.1:8000');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -83,6 +112,7 @@ const Contact = () => {
                   onChange={handleChange}
                   className="form-input"
                   placeholder="Your Name"
+                  disabled={isLoading}
                 />
               </div>
               
@@ -97,6 +127,7 @@ const Contact = () => {
                   onChange={handleChange}
                   className="form-input"
                   placeholder="Your Email"
+                  disabled={isLoading}
                 />
               </div>
               
@@ -111,16 +142,18 @@ const Contact = () => {
                   rows="5"
                   className="form-textarea"
                   placeholder="Your Message"
+                  disabled={isLoading}
                 />
               </div>
               
               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: isLoading ? 1 : 1.02 }}
+                whileTap={{ scale: isLoading ? 1 : 0.98 }}
                 type="submit"
                 className="submit-btn"
+                disabled={isLoading}
               >
-                Send Message
+                {isLoading ? 'Sending...' : 'Send Message'}
               </motion.button>
               
               {submitted && (
@@ -156,9 +189,7 @@ const Contact = () => {
                     whileHover={{ scale: 1.05, x: 10 }}
                     className={`social-link ${link.color}`}
                   >
-                    {}
                     <IconComponent className="social-icon" />
-                    
                     <span className="social-name">{link.name}</span>
                   </motion.a>
                 );
