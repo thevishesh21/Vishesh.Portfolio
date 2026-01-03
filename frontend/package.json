@@ -6,13 +6,13 @@
   "type": "module",
   "homepage": "https://thevishesh21.github.io/Vishesh.Portfolio",
   "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist",
-  "lint": "eslint .",
-  "preview": "vite preview"
-},
+    "dev": "vite",
+    "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "framer-motion": "^12.23.26",
     "lucide-react": "^0.562.0",
