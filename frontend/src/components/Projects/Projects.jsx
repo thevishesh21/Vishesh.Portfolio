@@ -3,11 +3,16 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import './Projects.css';
 
-// Import icon images - adjust path based on your folder structure
-import blogIcon from "../../assets/icons/Blog-Icon.png";
+// Import icon images - adjust path based on your folder ";
+// ✅ Vite + Vercel SAFE image imports
+
+import blogIcon from "../../assets/icons/blog-icon.png";
 import portfolioIcon from "../../assets/icons/portfolio-icon.webp";
 import iotIcon from "../../assets/icons/iot-icon.jpg";
-import scoreIcon from "../../assets/icons/sport-icon.webp";
+import ScoreIcon from "../../assets/icons/sport-icon.webp";
+<><img src={blogIcon} alt="Blog Project" /><img src={portfolioIcon} alt="Portfolio Project" /><img src={iotIcon} alt="IoT Project" /><img src={ScoreIcon} alt="Sports Project" /></>
+
+
 const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -40,7 +45,7 @@ const Projects = () => {
     },
     {
       icon: "fas fa-table-tennis",
-      iconImage: scoreIcon,
+      iconImage: ScoreIcon,
       title: "Sports Score Analyzer",
       description: "Sports analysis system for match data and performance trends with data processing, visualization, and statistical insights.",
       tags: ["Python", "Pandas", "Matplotlib"],
