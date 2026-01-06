@@ -1,6 +1,6 @@
 .contact {
   padding: 5rem 0;
-  background: white;
+  background: #f7f9fc;
 }
 
 .contact-container {
@@ -26,6 +26,8 @@
   border-radius: 1.5rem;
   padding: 2.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
 .form-group {
@@ -117,13 +119,14 @@
   gap: 1rem;
   padding: 1rem 1.5rem;
   background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
-  border: 2px solid #e5e7eb;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 0.75rem;
   color: #374151;
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .social-link::before {
@@ -139,6 +142,11 @@
 
 .social-link:hover::before {
   left: 100%;
+}
+
+.social-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .social-icon {

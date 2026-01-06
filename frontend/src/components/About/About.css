@@ -1,6 +1,6 @@
 .about {
   padding: 5rem 0;
-  background: white;
+  background: #f7f9fc;
 }
 
 .about-container {
@@ -35,10 +35,11 @@
 }
 
 .about-card {
-  background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
+  background: linear-gradient(135deg, #c15c5c 0%, #91a4e7 100%);
   border-radius: 1.5rem;
   padding: 3rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgb(101 8 8);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .about-subtitle {
@@ -49,7 +50,7 @@
 }
 
 .about-text {
-  color: #374151;
+  color: #000000;
   line-height: 1.8;
   margin-bottom: 2.5rem;
 }
@@ -66,16 +67,18 @@
 }
 
 .info-card {
-  background: white;
-  border-radius: 1rem;
+  background: linear-gradient(135deg, #c15c5c 0%, #91a4e7 100%);
+  border-radius: 2rem;
   padding: 2rem;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 2.5px solid #000000;
   text-align: center;
   transition: all 0.3s ease;
 }
 
 .info-card:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .info-icon {
@@ -86,19 +89,19 @@
 .info-title {
   font-size: 1.125rem;
   font-weight: bold;
-  color: #3b82f6;
+  color: #000000;
   margin-bottom: 0.5rem;
 }
 
 .info-subtitle {
-  color: #111827;
+  color: #000000;
   font-weight: 600;
   font-size: 0.95rem;
   margin-bottom: 0.25rem;
 }
 
 .info-description {
-  color: #6b7280;
+  color: #000000;
   font-size: 0.875rem;
 }
 
@@ -119,9 +122,9 @@
   font-size: 3rem;
   margin-bottom: 1rem;
 
-  color: #3b82f6; 
+  color: #000000; 
 }
 
 .info-icon svg {
-  fill: #3b82f6; 
+  fill: #000000; 
 }

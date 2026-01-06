@@ -36,7 +36,7 @@
 /* Main Services Section */
 .main-services-section {
   padding: 5rem 0;
-  background: white;
+  background: #f7f9fc;
 }
 
 .services-container {
@@ -118,7 +118,13 @@
   border-radius: 1rem;
   text-align: center;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e5e7eb;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.why-choose-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
 .why-choose-icon {
@@ -143,7 +149,7 @@
 /* Detailed Services Section */
 .detailed-services-section {
   padding: 5rem 0;
-  background: white;
+  background: #f7f9fc;
 }
 
 .detailed-services-grid {

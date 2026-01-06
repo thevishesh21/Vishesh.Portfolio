@@ -2,7 +2,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
+  background: linear-gradient(80deg, #eef1f7 0%, #646871 100%);
   padding-top: 5rem;
 }
 
@@ -27,12 +27,12 @@
 .hero-title {
   font-size: 3.5rem;
   font-weight: bold;
-  color: #111827;
+  color: #000000;
   margin-bottom: 1rem;
 }
 
 .hero-name {
-  background: linear-gradient(to right, #3b82f6, #6366f1);
+  background: linear-gradient(to right, #3b4c69, #000000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -40,13 +40,13 @@
 
 .hero-subtitle {
   font-size: 1.5rem;
-  color: #374151;
+  color: #000000;
   margin-bottom: 1.5rem;
 }
 
 .hero-description {
   font-size: 1.125rem;
-  color: #6b7280;
+  color: #000000;
   line-height: 1.8;
   margin-bottom: 2rem;
 }
@@ -59,8 +59,8 @@
 
 .btn-primary {
   padding: 0.875rem 2rem;
-  background: linear-gradient(to right, #3b82f6, #6366f1);
-  color: white;
+  background: linear-gradient(to right, #717171, #6366f1);
+  color: rgb(0, 0, 0);
   text-decoration: none;
   border-radius: 0.5rem;
   font-weight: 600;
@@ -74,8 +74,8 @@
 
 .btn-secondary {
   padding: 0.875rem 2rem;
-  border: 2px solid #3b82f6;
-  color: #3b82f6;
+  border: 2px solid #000000;
+  color: #000000;
   text-decoration: none;
   border-radius: 0.5rem;
   font-weight: 600;
