@@ -1,6 +1,6 @@
 .about {
   padding: 5rem 0;
-  background: #f7f9fc;
+  background: linear-gradient(160deg, #646871 0%, #91a3c5 100%);
 }
 
 .about-container {
@@ -24,7 +24,7 @@
 .section-underline {
   width: 80px;
   height: 4px;
-  background: linear-gradient(to right, #3b82f6, #6366f1);
+  background: linear-gradient(to right, #000000, #080941);
   margin: 0 auto;
   border-radius: 2px;
 }

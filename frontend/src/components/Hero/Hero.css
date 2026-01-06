@@ -2,7 +2,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(80deg, #eef1f7 0%, #646871 100%);
+  background: linear-gradient(80deg, #bccded 0%, #9852a9 100%);
   padding-top: 5rem;
 }
 
@@ -59,8 +59,8 @@
 
 .btn-primary {
   padding: 0.875rem 2rem;
-  background: linear-gradient(to right, #717171, #6366f1);
-  color: rgb(0, 0, 0);
+  background: linear-gradient(to right, #0c030a, #a5109a);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   border-radius: 0.5rem;
   font-weight: 600;

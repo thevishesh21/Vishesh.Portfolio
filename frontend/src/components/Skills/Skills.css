@@ -1,6 +1,6 @@
 .skills {
   padding: 5rem 0;
-  background: #f7f9fc;
+  background:linear-gradient(80deg, #a6b6d5 0%, #646871 100%);
 }
 
 .skills-container {
@@ -16,7 +16,7 @@
 }
 
 .skill-card {
-  background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
+  background: linear-gradient(135deg, #c15c5c 0%, #91a4e7 100%);
   border-radius: 1.5rem;
   padding: 2rem; 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -39,7 +39,7 @@
 
 .skill-icon {
   font-size: 4rem;
-  color: #3b82f6;
+  color: #000000;
 }
 
 .skill-name {
@@ -66,43 +66,43 @@
 
 /* Skill-specific colors */
 .html-color {
-  background: linear-gradient(to right, #f97316, #dc2626);
+  background: linear-gradient(to right, #000000, #000000);
 }
 
 .css-color {
-  background: linear-gradient(to right, #3b82f6, #06b6d4);
+  background: linear-gradient(to right, #000000, #000000);
 }
 
 .js-color {
-  background: linear-gradient(to right, #fbbf24, #f59e0b);
+  background: linear-gradient(to right, #000000, #000000);
 }
 
 .python-color {
-  background: linear-gradient(to right, #3b82f6, #fbbf24);
+  background: linear-gradient(to right, #000000, #000000);
 }
 
 .mysql-color {
-  background: linear-gradient(to right, #2563eb, #1e40af);
+  background: linear-gradient(to right, #000000, #000000);
 }
 
 .linux-color {
-  background: linear-gradient(to right, #374151, #111827);
+  background: linear-gradient(to right, #000000, #000000);
 }
 
 .aws-color {
-  background: linear-gradient(to right, #ff9900, #ffc460); 
+  background: linear-gradient(to right, #000000, #000000); 
 }
 
 .react-color {
-  background: linear-gradient(to right, #61dafb, #00d8ff);
+  background: linear-gradient(to right, #000000, #000000);
 }
 
 .analysis-color {
-  background: linear-gradient(to right, #10b981, #059669);
+  background: linear-gradient(to right, #000000, #000000);
 }
 
 .skill-percentage {
-  color: #3b82f6;
+  color: #000000;
   font-weight: 600;
   font-size: 1.125rem;
 }

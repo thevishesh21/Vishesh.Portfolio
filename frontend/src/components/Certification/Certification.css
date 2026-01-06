@@ -1,6 +1,6 @@
 .certifications {
   padding: 5rem 0;
-  background: #f7f9fc;
+  background: linear-gradient(160deg, #646871 0%, #91a3c5 100%);
 }
 
 .certifications-container {
@@ -24,7 +24,7 @@
 .section-underline {
   width: 80px;
   height: 4px;
-  background: linear-gradient(to right, #3b82f6, #6366f1);
+  background:linear-gradient(to right, #000000, #080941);
   margin: 0 auto;
   border-radius: 2px;
 }
@@ -37,7 +37,7 @@
 }
 
 .certification-card {
-  background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
+  background: linear-gradient(135deg, #c15c5c 0%, #91a4e7 100%);
   border-radius: 1.25rem;
   padding: 2.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -65,7 +65,7 @@
   justify-content: center;
   width: 90px;
   height: 90px;
-  background: white;
+  background: linear-gradient(135deg, #0c020c63 0%, #3a293b 100%);
   border-radius: 1.25rem;
   margin: 0 auto;
   box-shadow: 0 5px 20px rgba(59, 130, 246, 0.2);
@@ -93,12 +93,12 @@
 .certification-title {
   font-size: 1.35rem;
   font-weight: bold;
-  color: #111827;
+  color: #000000;
   margin-bottom: 1rem;
 }
 
 .certification-description {
-  color: #6b7280;
+  color: #000000;
   line-height: 1.6;
   font-size: 0.95rem;
 }
@@ -110,8 +110,8 @@
   gap: 0.5rem;
   width: 100%;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(to right, #3b82f6, #6366f1);
-  color: white;
+  background: linear-gradient(to right, #0c030a, #a5109a);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   border-radius: 0.625rem;
   font-weight: 600;
@@ -135,7 +135,7 @@
   align-items: center;
   justify-content: center;
   padding: 1rem 2.5rem;
-  background: linear-gradient(to right, #3b82f6, #6366f1);
+  background: linear-gradient(to right, #0c030a, #a5109a);
   color: white;
   text-decoration: none;
   border-radius: 0.75rem;
