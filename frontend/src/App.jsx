@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
-import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import Hero from './components/Hero/Hero';
-import About from './components/About/About';
-import Services from './components/Services/Services';
-import Skills from './components/Skills/Skills';
-import Projects from './components/Projects/Projects';
-import Certifications from './components/Certification/Certification';
-import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import "./App.css";
+
+import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero";
+import About from "./components/About/About";
+import Services from "./components/Services/Services";
+import Skills from "./components/Skills/Skills";
+import Projects from "./components/Projects/Projects";
+import Certifications from "./components/Certification/Certification";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
+
+import { motion } from "framer-motion";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -26,13 +28,14 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1500);
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
   }, []);
 
-  // Ensure hash routing always starts at home when opening the deployed link directly
+  // Ensure hash routing always starts at home
   useEffect(() => {
-    if (!window.location.hash || window.location.hash === '#') {
-      window.location.hash = '#/';
+    if (!window.location.hash || window.location.hash === "#") {
+      window.location.hash = "#/";
     }
   }, []);
 
@@ -56,33 +59,42 @@ function App() {
   }
 
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <div className="App">
         <Navbar />
+
         <Routes>
-          <Route path="/" element={
-            <>
-              <Hero />
-              <About />
-              <Skills />
-              <Projects />
-              <Certifications />
-              <Contact />
-              <Footer />
-            </>
-          } />
-          <Route path="/services" element={
-            <>
-              <Services />
-              <Contact />
-              <Footer />
-            </>
-          } />
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <About />
+                <Skills />
+                <Projects />
+                <Certifications />
+                <Contact />
+                <Footer />
+              </>
+            }
+          />
+
+          <Route
+            path="/services"
+            element={
+              <>
+                <Services />
+                <Contact />
+                <Footer />
+              </>
+            }
+          />
+
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
-    </Router>
+    </>
   );
 }
 
