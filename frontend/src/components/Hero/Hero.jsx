@@ -1,6 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import './Hero.css';
+import React from "react";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
+import "./Hero.css";
+
+// ✅ Import image from src/assets (BEST PRACTICE)
+import profilePic from "../../assets/mypic.png";
 
 const Hero = () => {
   return (
@@ -22,7 +26,7 @@ const Hero = () => {
             >
               <span className="hero-name">Vishesh Pal</span>
             </motion.h1>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -31,14 +35,16 @@ const Hero = () => {
             >
               Electronics Engineering Student & Future Tech Innovator
             </motion.p>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
               className="hero-description"
             >
-              Welcome to my portfolio! I'm an Electronics Engineering student at ANDC College, Delhi University. Exploring my journey through electronics, AI, and robotics.
+              Welcome to my portfolio! I'm an Electronics Engineering student at
+              ANDC College, Delhi University. Exploring my journey through
+              electronics, AI, and robotics.
             </motion.p>
 
             <motion.div
@@ -55,6 +61,7 @@ const Hero = () => {
               >
                 Explore My Journey
               </motion.a>
+
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -81,7 +88,7 @@ const Hero = () => {
               <div className="hero-image-border">
                 <div className="hero-image-inner">
                   <img
-                    src="/Vishesh.Portfolio/mypic.png"
+                    src={profilePic}
                     alt="Vishesh Pal"
                     className="hero-image"
                   />
