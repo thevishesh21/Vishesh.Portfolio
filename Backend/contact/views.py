@@ -37,3 +37,4 @@ def contact_view(request):
         },
         status=status.HTTP_400_BAD_REQUEST
     )
+print("CONTACT VIEWS LOADED")
