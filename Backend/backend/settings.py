@@ -28,6 +28,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     ".onrender.com",
     "vishesh-dev.me",
+    ".vishesh-dev.me",
 ]
 
 
