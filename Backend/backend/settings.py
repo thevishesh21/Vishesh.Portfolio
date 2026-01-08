@@ -78,6 +78,12 @@ CORS_ALLOWED_ORIGINS = [
 
 CORS_ALLOW_CREDENTIALS = True
 
+# CSRF (VERY IMPORTANT for POST)
+CSRF_TRUSTED_ORIGINS = [
+    "https://vishesh-dev.me",
+    "https://api.vishesh-dev.me",
+]
+
 
 # --------------------------------------------------
 # URLS / WSGI

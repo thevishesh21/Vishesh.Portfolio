@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion, useInView } from 'framer-motion';
 import { FaLinkedinIn, FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
 import './Contact.css';
@@ -40,7 +41,7 @@ const Contact = () => {
       }
     } catch (error) {
       console.error('Network error:', error);
-      alert('Network error. Please check if backend is running on http://127.0.0.1:8000');
+      alert('Network error. Please check if backend is running on http://api.vishesh-dev.me');
     } finally {
       setIsLoading(false);
     }
