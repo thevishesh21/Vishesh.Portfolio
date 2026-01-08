@@ -41,7 +41,7 @@ const Contact = () => {
       }
     } catch (error) {
       console.error('Network error:', error);
-      alert('Network error. Please check if backend is running on http://api.vishesh-dev.me');
+      alert('Network error. Please check if backend is running on https://api.vishesh-dev.me');
     } finally {
       setIsLoading(false);
     }
