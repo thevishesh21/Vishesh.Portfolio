@@ -142,8 +142,9 @@ export function Navbar() {
                 className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-white md:hidden"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
               >
-                {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                {isMobileMenuOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
               </motion.button>
             </div>
           </nav>
@@ -185,8 +186,9 @@ export function Navbar() {
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-white"
+                    aria-label="Close menu"
                   >
-                    <X className="h-5 w-5" />
+                    <X className="h-5 w-5" aria-hidden="true" />
                   </button>
                 </div>
 

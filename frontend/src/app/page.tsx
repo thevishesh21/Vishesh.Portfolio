@@ -4,8 +4,10 @@ import dynamic from 'next/dynamic'
 import { Navbar } from '@/components/layout/Navbar'
 import { Hero } from '@/components/sections/Hero'
 import { About } from '@/components/sections/About'
-import { Projects } from '@/components/sections/Projects'
+import { Services } from '@/components/sections/Services'
 import { Skills } from '@/components/sections/Skills'
+import { Projects } from '@/components/sections/Projects'
+import { Certifications } from '@/components/sections/Certifications'
 import { Contact } from '@/components/sections/Contact'
 import { Footer } from '@/components/layout/Footer'
 import { MouseGlow } from '@/components/effects/MouseGlow'
@@ -34,8 +36,10 @@ export default function Home() {
       <div className="relative z-10">
         <Hero />
         <About />
-        <Projects />
+        <Services />
         <Skills />
+        <Projects />
+        <Certifications />
         <Contact />
         <Footer />
       </div>

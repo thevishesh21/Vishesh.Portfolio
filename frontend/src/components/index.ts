@@ -5,8 +5,10 @@ export { Footer } from './layout/Footer'
 // Section Components
 export { Hero } from './sections/Hero'
 export { About } from './sections/About'
-export { Projects } from './sections/Projects'
+export { Services } from './sections/Services'
 export { Skills } from './sections/Skills'
+export { Projects } from './sections/Projects'
+export { Certifications } from './sections/Certifications'
 export { Contact } from './sections/Contact'
 
 // Effects

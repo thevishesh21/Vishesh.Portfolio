@@ -108,52 +108,27 @@ function InnerScene() {
 
 export function ParticleField() {
   return (
-    <div className="absolute inset-0 w-full h-full">
+    <div className="absolute inset-0 h-full w-full">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 75 }}
         dpr={[1, 2]}
-        style={{ background: 'transparent' }}
+        className="bg-transparent"
         gl={{ alpha: true, antialias: true }}
       >
         <InnerScene />
       </Canvas>
 
       {/* Gradient Overlays for depth */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="pointer-events-none absolute inset-0">
         {/* Radial gradient from center */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'radial-gradient(ellipse at 50% 50%, transparent 0%, rgba(3, 3, 3, 0.5) 70%, rgba(3, 3, 3, 0.9) 100%)',
-          }}
-        />
+        <div className="particle-radial-gradient absolute inset-0" />
         {/* Top fade */}
-        <div
-          className="absolute top-0 left-0 right-0 h-48"
-          style={{
-            background: 'linear-gradient(180deg, rgba(3, 3, 3, 0.8) 0%, transparent 100%)',
-          }}
-        />
+        <div className="particle-top-fade absolute left-0 right-0 top-0 h-48" />
         {/* Bottom fade */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-48"
-          style={{
-            background: 'linear-gradient(0deg, rgba(3, 3, 3, 0.9) 0%, transparent 100%)',
-          }}
-        />
+        <div className="particle-bottom-fade absolute bottom-0 left-0 right-0 h-48" />
         {/* Subtle color overlays */}
-        <div
-          className="absolute top-0 left-0 w-full h-full opacity-30"
-          style={{
-            background: 'radial-gradient(ellipse at 20% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 50%)',
-          }}
-        />
-        <div
-          className="absolute top-0 right-0 w-full h-full opacity-30"
-          style={{
-            background: 'radial-gradient(ellipse at 80% 100%, rgba(0, 229, 229, 0.1) 0%, transparent 50%)',
-          }}
-        />
+        <div className="particle-purple-overlay absolute left-0 top-0 h-full w-full opacity-30" />
+        <div className="particle-cyan-overlay absolute right-0 top-0 h-full w-full opacity-30" />
       </div>
     </div>
   )

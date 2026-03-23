@@ -29,10 +29,37 @@ const itemVariants = {
 }
 
 const iconMap: { [key: string]: React.ReactNode } = {
-  code: <Rocket className="h-6 w-6" />,
-  cloud: <BookOpen className="h-6 w-6" />,
-  chart: <Users className="h-6 w-6" />,
-  cpu: <Award className="h-6 w-6" />,
+  code: <Rocket className="h-6 w-6" aria-hidden="true" />,
+  cloud: <BookOpen className="h-6 w-6" aria-hidden="true" />,
+  chart: <Users className="h-6 w-6" aria-hidden="true" />,
+  cpu: <Award className="h-6 w-6" aria-hidden="true" />,
+}
+
+const colorClasses: Record<string, { iconBg: string; iconText: string; accentLine: string; hoverGradient: string }> = {
+  '#3b82f6': {
+    iconBg: 'bg-blue-500/20',
+    iconText: 'text-blue-500',
+    accentLine: 'bg-blue-500',
+    hoverGradient: 'skills-hover-blue',
+  },
+  '#FF9900': {
+    iconBg: 'bg-orange-500/20',
+    iconText: 'text-orange-500',
+    accentLine: 'bg-orange-500',
+    hoverGradient: 'skills-hover-orange',
+  },
+  '#8b5cf6': {
+    iconBg: 'bg-purple-500/20',
+    iconText: 'text-purple-500',
+    accentLine: 'bg-purple-500',
+    hoverGradient: 'skills-hover-purple',
+  },
+  '#10b981': {
+    iconBg: 'bg-emerald-500/20',
+    iconText: 'text-emerald-500',
+    accentLine: 'bg-emerald-500',
+    hoverGradient: 'skills-hover-emerald',
+  },
 }
 
 const stats = [
@@ -64,7 +91,7 @@ export function Skills() {
               Expertise
             </span>
             <h2 className="font-display text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-              Services &
+              Skills &
               <span className="text-gradient"> Capabilities</span>
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-white/50">
@@ -106,49 +133,48 @@ export function Skills() {
             variants={itemVariants}
             className="mb-20 grid gap-6 md:grid-cols-2 lg:grid-cols-4"
           >
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                className="group relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] p-6"
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ delay: index * 0.1 + 0.3 }}
-                whileHover={{ y: -8 }}
-              >
-                {/* Icon */}
-                <div
-                  className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl transition-colors"
-                  style={{ backgroundColor: `${service.color}20`, color: service.color }}
-                >
-                  {iconMap[service.icon] || <Rocket className="h-6 w-6" />}
-                </div>
-
-                {/* Content */}
-                <h3 className="mb-3 font-display text-lg font-semibold text-white">
-                  {service.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-white/50">
-                  {service.description}
-                </p>
-
-                {/* Hover accent line */}
+            {services.map((service, index) => {
+              const colors = colorClasses[service.color] || {
+                iconBg: 'bg-cyan-500/20',
+                iconText: 'text-cyan-500',
+                accentLine: 'bg-cyan-500',
+                hoverGradient: 'skills-hover-cyan',
+              }
+              return (
                 <motion.div
-                  className="absolute bottom-0 left-0 h-1 w-full"
-                  style={{ backgroundColor: service.color }}
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
+                  key={service.title}
+                  className="group relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] p-6"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                  transition={{ delay: index * 0.1 + 0.3 }}
+                  whileHover={{ y: -8 }}
+                >
+                  {/* Icon */}
+                  <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl transition-colors ${colors.iconBg} ${colors.iconText}`}>
+                    {iconMap[service.icon] || <Rocket className="h-6 w-6" aria-hidden="true" />}
+                  </div>
 
-                {/* Background gradient on hover */}
-                <div
-                  className="absolute inset-0 -z-10 opacity-0 transition-opacity group-hover:opacity-100"
-                  style={{
-                    background: `radial-gradient(circle at bottom, ${service.color}10 0%, transparent 70%)`,
-                  }}
-                />
-              </motion.div>
-            ))}
+                  {/* Content */}
+                  <h3 className="mb-3 font-display text-lg font-semibold text-white">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-white/50">
+                    {service.description}
+                  </p>
+
+                  {/* Hover accent line */}
+                  <motion.div
+                    className={`absolute bottom-0 left-0 h-1 w-full origin-left ${colors.accentLine}`}
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+
+                  {/* Background gradient on hover */}
+                  <div className={`absolute inset-0 -z-10 opacity-0 transition-opacity group-hover:opacity-100 ${colors.hoverGradient}`} />
+                </motion.div>
+              )
+            })}
           </motion.div>
 
           {/* Certifications */}
@@ -168,10 +194,11 @@ export function Skills() {
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ delay: index * 0.1 + 0.6 }}
                   whileHover={{ y: -5 }}
+                  aria-label={`View ${cert.title} certificate`}
                 >
                   <div className="mb-4 flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/10">
-                      <Award className="h-5 w-5 text-cyan-400" />
+                      <Award className="h-5 w-5 text-cyan-400" aria-hidden="true" />
                     </div>
                     <span className="text-xs text-white/40">{cert.date}</span>
                   </div>
@@ -190,6 +217,7 @@ export function Skills() {
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
+                        aria-hidden="true"
                       >
                         <path
                           strokeLinecap="round"

@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   keywords: ['Vishesh Pal', 'Software Engineer', 'Full Stack Developer', 'AI', 'IoT', 'React', 'Next.js', 'AWS', 'Portfolio'],
   authors: [{ name: 'Vishesh Pal' }],
   creator: 'Vishesh Pal',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -53,10 +57,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${plusJakartaSans.variable}`}>
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-      </head>
       <body className="antialiased">
         <div className="noise-overlay" aria-hidden="true" />
         {children}
