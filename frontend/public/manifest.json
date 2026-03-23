@@ -1,0 +1,16 @@
+{
+  "name": "Vishesh Pal Portfolio",
+  "short_name": "VP Portfolio",
+  "description": "Portfolio of Vishesh Pal - Software Engineer & Tech Innovator",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030303",
+  "theme_color": "#00e5e5",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}
