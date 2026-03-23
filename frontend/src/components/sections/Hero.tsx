@@ -187,7 +187,7 @@ export function Hero() {
             {/* Profile Image */}
             <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-white/10 sm:h-80 sm:w-80">
               <Image
-                src="IMG.jpeg"
+                src="/IMG.jpeg"
                 alt={`${personalInfo.name} profile picture`}
                 fill
                 className="object-cover"

@@ -179,17 +179,10 @@ export function Navbar() {
             >
               <div className="flex flex-col p-6">
                 {/* Header */}
-                <div className="mb-8 flex items-center justify-between">
+                <div className="mb-8">
                   <span className="font-display text-xl font-bold text-gradient">
                     {personalInfo.name}
                   </span>
-                  <button
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-white"
-                    aria-label="Close menu"
-                  >
-                    <X className="h-5 w-5" aria-hidden="true" />
-                  </button>
                 </div>
 
                 {/* Links */}
